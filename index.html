@@ -74,7 +74,7 @@
 
 <p>Our Specific Enablers are available as public Docker images in the <a href="https://registry.hub.docker.com/repos/fic2/">FIC2Lab DockerHub repository</a></p>
 
-<p><img src="images/image01.png" alt=""></p>
+<p><img src="https://github.com/fic2/runner/raw/master/images/image05.png" alt=""></p>
 
 <p>The following subsections will show the different ways in which you can run SEs.</p>
 
@@ -87,19 +87,19 @@
 
 <p>You can request your account and the community upgrade at <a href="https://account.lab.fiware.org">https://account.lab.fiware.org</a></p>
 
-<p><img src="images/image02.png" alt=""></p>
+<p><img src="https://github.com/fic2/runner/raw/master/images/image06.png" alt=""></p>
 
 <p>Once you have received a confirmation of your upgrade to a community account, you can go to the <a href="https://runner.developer.mediafi.org">FIC2Lab runner wizard</a> where you will be guided through the steps to create your own run environment.</p>
 
-<p><img src="images/image03.png" alt=""></p>
+<p><img src="https://github.com/fic2/runner/raw/master/images/image07.png" alt=""></p>
 
-<p><img src="images/image04.png" alt=""></p>
+<p><img src="https://github.com/fic2/runner/raw/master/images/image08.png" alt=""></p>
 
-<p><img src="images/image05.png" alt=""></p>
+<p><img src="https://github.com/fic2/runner/raw/master/images/image09.png" alt=""></p>
 
 <p>Once you click on the button to start creating your environment, the wizard will go through a number of steps that set up everything that you need on FIWARE Lab Cloud. If everything goes right, you should see a pop-up with the URL to your dedicated management console.</p>
 
-<p><img src="images/image06.png" alt=""></p>
+<p><img src="https://github.com/fic2/runner/raw/master/images/image01.png" alt=""></p>
 
 <p>Some of the things that can go wrong are:</p>
 
@@ -123,11 +123,11 @@
 
 <p>The user interface provides a built-in search capability that can search any public Docker image repository through Docker Hub, including the FI-CONTENT 2 repository. It will search as well public Application Templates from Panamax.io. You can also select from the list the featured templates and images.</p>
 
-<p><img src="images/image07.png" alt=""></p>
+<p><img src="https://github.com/fic2/runner/raw/master/images/image00.png" alt=""></p>
 
 <p>Let’s select the Social Network SE and click on “Run Template”. This will trigger under the hood the download and launch of an application with one image: “fic2/ppnet”. It will open the management dashboard for this application and show a spinning wheel that means that the deployment is taking place.</p>
 
-<p><img src="images/image08.png" alt=""></p>
+<p><img src="https://github.com/fic2/runner/raw/master/images/image03.png" alt=""></p>
 
 <p>Categories help you structure your application in tiers. If you are creating a multi-tiered application using multiple Docker images, you can add more images to your application here.</p>
 
@@ -145,7 +145,7 @@
 
 <p>For convenience, all the exposed ports of a Docker image are bound to the outside in a randomly generated port (in the 49000-50000 range). You can change that in the “Ports” tab of the service configuration, as shown below.</p>
 
-<p><img src="images/image09.png" alt=""></p>
+<p><img src="https://github.com/fic2/runner/raw/master/images/image02.png" alt=""></p>
 
 <h2>
 <a id="run-ses-using-command-line-tools-in-your-own-machine" class="anchor" href="#run-ses-using-command-line-tools-in-your-own-machine" aria-hidden="true"><span class="octicon octicon-link"></span></a>Run SEs using command-line tools in your own machine</h2>
@@ -174,7 +174,7 @@
 
 <p>Then follow the instructions there. For instance, here are the instructions to run the Social Network SE:</p>
 
-<p><img src="images/image10.png" alt=""></p>
+<p><img src="https://github.com/fic2/runner/raw/master/images/image04.png" alt=""></p>
 
 <p>This will download the Docker image for ppnet, run it in a Docker container and forward the container port 80 to the host port 8000:</p>
 
@@ -198,9 +198,9 @@ a12d72b85f092c288d30ae6d0562e9861de8625e60aa985ff186ec075f929da7
 
 <p>Once the download is complete, the container will be up and running and we will get a container ID in the console. To check all the running containers, type:</p>
 
-<pre><code>\$ docker ps
+<pre><code>$ docker ps
 CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES
-a12d72b85f09 fic2/ppnet:latest "/usr/local/bin/run. 44 seconds ago Up 43 seconds 0.0.0.0:8000-\&gt;80/tcp mad\_goldstine
+a12d72b85f09 fic2/ppnet:latest "/usr/local/bin/run. 44 seconds ago Up 43 seconds 0.0.0.0:8000-&gt;80/tcp mad_goldstine
 </code></pre>
 
 <p>You will notice the port redirection from host machine (0.0.0.0) port 8000 to container port 80. A random name will be generated if none is specified.</p>
@@ -223,7 +223,7 @@ a12d72b85f09 fic2/ppnet:latest "/usr/local/bin/run. 44 seconds ago Up 43 seconds
 <li>32768-33768: when launching docker containers using docker run -P (note the capital P), docker will randomly expose the service on a port starting from 32768 and increased for each new service.</li>
 </ul>
 
-<p><img src="images/image11.png" alt=""></p>
+<p><img src="https://github.com/fic2/runner/raw/master/images/image10.png" alt=""></p>
 
 <p>You will also need to retrieve the following information:</p>
 
@@ -242,12 +242,12 @@ a12d72b85f09 fic2/ppnet:latest "/usr/local/bin/run. 44 seconds ago Up 43 seconds
 <li><p>Load the environment variables to target the FIWARE Lab node, e.g.:</p></li>
 </ol>
 
-<pre><code>export OS\_REGION\_NAME='Lannion2'
-export OS\_TENANT\_NAME='username cloud'
-export OS\_USERNAME='emailaddress'
-export OS\_PASSWORD='password'
-export OS\_AUTH\_URL='http://cloud.lab.fi-ware.org:4730/v2.0/'
-export OS\_AUTH\_STRATEGY='keystone'
+<pre><code>export OS_REGION_NAME='Lannion2'
+export OS_TENANT_NAME='username cloud'
+export OS_USERNAME='emailaddress'
+export OS_PASSWORD='password'
+export OS_AUTH_URL='http://cloud.lab.fi-ware.org:4730/v2.0/'
+export OS_AUTH_STRATEGY='keystone'
 </code></pre>
 
 <p>Docker Machine will use these environment variables to connect to OpenStack.</p>
@@ -257,7 +257,7 @@ export OS\_AUTH\_STRATEGY='keystone'
 
 <p>The following command will use your credentials to create a small instance with an Ubuntu 14.04 image connected to the specified network, using the previously created security group docker-machine-sg and associating a public IP address from the specified pool. These parameters were tested in Lannion2 region, you need to change them for other regions.</p>
 
-<pre><code>\$ docker-machine create \\
+<pre><code>$ docker-machine create \\
 -d openstack \\
 --openstack-flavor-id="2" \\
 --openstack-image-id="7be3296f-dcc4-494f-ba97-dd572475024c" \\
@@ -274,20 +274,20 @@ docker-machine env my-host
 The instance is up and running. You should now configure Docker client to manage it remotely.
 </code></pre>
 
-<pre><code>\$ docker-machine env my-host
-export DOCKER\_TLS\_VERIFY="1"
-export DOCKER\_HOST="tcp://195.220.224.42:2376"
-export DOCKER\_CERT\_PATH="/home/tai/.docker/machine/machines/my-host"
-\# Run this command to configure your shell: eval "\$(docker-machine env my-host)"
+<pre><code>$ docker-machine env my-host
+export DOCKER_TLS_VERIFY="1"
+export DOCKER_HOST="tcp://195.220.224.42:2376"
+export DOCKER_CERT_PATH="/home/tai/.docker/machine/machines/my-host"
+\# Run this command to configure your shell: eval "$(docker-machine env my-host)"
 </code></pre>
 
-<pre><code>\$ eval "\$(docker-machine env my-host)"
+<pre><code>$ eval "$(docker-machine env my-host)"
 You can now use the Docker client as if you were logged into the target machine.
 </code></pre>
 
-<pre><code>\$ docker ps
+<pre><code>$ docker ps
 CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES
-\$ docker run -d -P fic2/ppnet
+$ docker run -d -P fic2/ppnet
 Unable to find image 'fic2/ppnet:latest' locally Pulling repository fic2/ppnet
 b454781957ed: Download complete
 511136ea3c5a: Download complete
@@ -299,26 +299,26 @@ d81ff9276ee7: Download complete
 9520277322c9: Download complete
 Status: Downloaded newer image for fic2/ppnet:latest
 a12d72b85f092c288d30ae6d0562e9861de8625e60aa985ff186ec075f929da7
-\$ docker ps
+$ docker ps
 CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES
-a12d72b85f09 fic2/ppnet:latest "/usr/local/bin/run. 29 seconds ago Up 28 seconds 0.0.0.0:32768-\&gt;80/tcp silly\_hypatia
+a12d72b85f09 fic2/ppnet:latest "/usr/local/bin/run. 29 seconds ago Up 28 seconds 0.0.0.0:32768-&gt;80/tcp silly_hypatia
 </code></pre>
 
 <p>This launches the ppnet Social Network Enabler on a random port. The Docker daemon will use ports 32768 and up for random ports. Since they were opened in the security group that was created previously, the service is publicly available online. You can find out the public IP address through the Cloud Portal or with the following command:</p>
 
-<pre><code>\$ docker-machine url
+<pre><code>$ docker-machine url
 tcp://195.220.224.42:2376
 </code></pre>
 
 <p>The following command will stop the host VM instance with the running containers:</p>
 
-<pre><code>\$ docker-machine stop my-host
+<pre><code>$ docker-machine stop my-host
 Stopping OpenStack instance... MachineId=2c07c0d8-b76b-4626-9f0e-20eff2ab0c18
 </code></pre>
 
 <p>This will terminate the instance, disassociate the public IP address and remove the generated keypair:</p>
 
-<pre><code>\$ docker-machine rm my-host
+<pre><code>$ docker-machine rm my-host
 Deleting OpenStack instance...
 Successfully removed my-host
 </code></pre>
@@ -330,17 +330,22 @@ Successfully removed my-host
 
 <p>The following figures depict how easy it is to search the DockerHub for FI-CONTENT 2 enablers, create an instance of an enabler and see the running web application.</p>
 
-<p><img src="images/image12.png" alt=""></p>
+<p><img src="https://github.com/fic2/runner/raw/master/images/image11.png" alt=""></p>
 
-<p><img src="images/image13.png" alt=""></p>
+<p><img src="https://github.com/fic2/runner/raw/master/images/image12.png" alt=""></p>
 
-<p><img src="images/image14.png" alt=""></p>
+<p><img src="https://github.com/fic2/runner/raw/master/images/image13.png" alt=""></p>
 
 <p>Kitematic has a button (4th at the top) to open a terminal in the target machine to use the Docker command-line client.</p>
 
-<p><img src="images/image15.png" alt=""></p>
+<p><img src="https://github.com/fic2/runner/raw/master/images/image14.png" alt=""></p>
 
 <p>Since Kitematic uses docker-machine underneath to launch the target host machine, it can be tweaked to target remote host machines in the cloud.</p>
+
+<h2>
+<a id="conclusion" class="anchor" href="#conclusion" aria-hidden="true"><span class="octicon octicon-link"></span></a>Conclusion</h2>
+
+<p>Through this tutorial, you've learned the many different possibilities to run the enablers packaged as Docker containers.</p>
       </section>
     </div>
 
