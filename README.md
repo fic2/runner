@@ -40,7 +40,7 @@ What is Docker?
 
 Docker is an open-source project for shipping and running applications inside lightweight software containers that can run anywhere. Any application that runs on Linux can be packaged as a Docker container.
 
-Docker is very popular, and there are more than 70,000 Dockerized applications at the [DockerHub Registry](https://registry.hub.docker.com/)
+Docker is very popular, and there are more than 70,000 Dockerized applications in the [DockerHub Registry](https://registry.hub.docker.com/).
 
 How can I use the Docker images of the enablers?
 ------------------------------------------------
@@ -59,8 +59,8 @@ The following subsections will show the different ways in which you can run thos
 Using FIC2Lab runner
 ====================
 
-Run enablers using the FIC2Lab runner web-based tool (on top of FIWARE Lab Cloud)
----------------------------------------------------------------------------------
+Run enablers using the FIC2Lab runner web-based tool in FIWARE Lab Cloud
+------------------------------------------------------------------------
 
 FIC2Lab runner is a tool that automatically sets up for you a running VM instance with a Docker host and a web UI on top of the FIWARE Lab Cloud infrastructure. You don't need to know anything about the FIWARE Lab Cloud, it will configure all the infrastructure, network, security, etc.
 
@@ -94,8 +94,8 @@ Some of the things that can go wrong are:
 * Your quota of public IP addresses or VM instances is full.
 * There is an issue in the selected region. Try again in a few minutes or file a ticket.
 
-Run enablers using the FIC2Lab runner web-based tool (on top of Amazon Web Services)
-------------------------------------------------------------------------------------
+Run enablers using the FIC2Lab runner web-based tool in Amazon Web Services
+---------------------------------------------------------------------------
 
 If you have an Amazon Web Services account, you can easily launch our preconfigured AMI image of the FIC2Lab runner by clicking on the following button:
 
@@ -210,12 +210,12 @@ a12d72b85f09 fic2/ppnet:latest "/usr/local/bin/run. 44 seconds ago Up 43 seconds
 
 You will notice the port redirection from host machine (0.0.0.0) port 8000 to container port 80. A random name will be generated if none is specified.
 
-Run enablers using command-line tools in a remote machine in the cloud
-----------------------------------------------------------------------
+Run enablers using command-line tools in a remote machine in FIWARE Cloud
+-------------------------------------------------------------------------
 
 Docker Inc. develops a tool called docker-machine that you can use to automatically set up a docker host machine somewhere, and it can target cloud providers, including FIWARE Lab.
 
-You will need to allocate at 1 virtual machine instance with 1 public IP address. We will assume you have a Community account with enough free quotas in a FIWARE Lab region, for instance Lannion2.
+You will need to allocate 1 virtual machine instance with 1 public IP address. We will assume you have a Community account with enough free quotas in a FIWARE Lab region, for instance Lannion2.
 
 ### Preparing the cloud environment
 
@@ -326,6 +326,28 @@ $ docker-machine rm my-host
 Deleting OpenStack instance...
 Successfully removed my-host
 ```
+
+Run enablers using command-line tools in a remote machine in Amazon Web Services
+--------------------------------------------------------------------------------
+
+The procedure is very similar to the last section.
+
+You will need an Access Key ID, Secret Access Key and a VPC ID. To find the VPC ID, login to the AWS console and go to Services -> VPC -> Your VPCs. Select the one where you would like to launch the instance.
+
+```
+docker-machine create \
+--driver amazonec2 \
+--amazonec2-access-key your-aws-access-key \
+--amazonec2-secret-key your-aws-secret-key \
+--amazonec2-vpc-id your-aws-vpc-id \
+--amazonec2-region eu-west-1 \
+my-host
+
+```
+
+Use `docker-machine stop my-host` to stop the instance and `docker-machine rm my-host` to terminate the instance.
+
+You can find more information in the [Docker Machine documentation for Amazon Web Services](https://docs.docker.com/machine/#amazon-web-services).
 
 Run enablers locally or remotely using a graphical user interface for Mac OS X
 ------------------------------------------------------------------------------
