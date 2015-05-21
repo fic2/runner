@@ -10,23 +10,22 @@ Get started:
 Table of contents
 =================
 
-  * [TL;DR](#tldr)
-  * [Table of contents](#table-of-contents)
   * [Introduction](#introduction)
     * [What is Docker?](#what-is-docker)
     * [How can I use the Docker images of the enablers?](#how-can-i-use-the-docker-images-of-the-enablers)
   * [Using FIC2Lab runner](#using-fic2lab-runner)
-    * [Run enablers using the FIC2Lab runner web-based tool (on top of FIWARE Lab Cloud)](#run-enablers-using-the-fic2lab-runner-web-based-tool-on-top-of-fiware-lab-cloud)
-    * [Run enablers using the FIC2Lab runner web-based tool (on top of Amazon Web Services)](#run-enablers-using-the-fic2lab-runner-web-based-tool-on-top-of-amazon-web-services)
+    * [Run enablers using the FIC2Lab runner web-based tool in FIWARE Lab Cloud](#run-enablers-using-the-fic2lab-runner-web-based-tool-in-fiware-lab-cloud)
+    * [Run enablers using the FIC2Lab runner web-based tool in Amazon Web Services](#run-enablers-using-the-fic2lab-runner-web-based-tool-in-amazon-web-services)
     * [Using the Panamax management console](#using-the-panamax-management-console)
   * [Using command-line tools](#using-command-line-tools)
     * [Run enablers using command-line tools in your own machine](#run-enablers-using-command-line-tools-in-your-own-machine)
       * [Installing Docker](#installing-docker)
       * [Run enablers from the command line](#run-enablers-from-the-command-line)
-    * [Run enablers using command-line tools in a remote machine in the cloud](#run-enablers-using-command-line-tools-in-a-remote-machine-in-the-cloud)
+    * [Run enablers using command-line tools in a remote machine in FIWARE Cloud](#run-enablers-using-command-line-tools-in-a-remote-machine-in-fiware-cloud)
       * [Preparing the cloud environment](#preparing-the-cloud-environment)
       * [Setting up the tools](#setting-up-the-tools)
       * [Creating and managing the remote Docker host on FIWARE Lab](#creating-and-managing-the-remote-docker-host-on-fiware-lab)
+    * [Run enablers using command-line tools in a remote machine in Amazon Web Services](#run-enablers-using-command-line-tools-in-a-remote-machine-in-amazon-web-services)
     * [Run enablers locally or remotely using a graphical user interface for Mac OS X](#run-enablers-locally-or-remotely-using-a-graphical-user-interface-for-mac-os-x)
     * [Conclusion](#conclusion)
 
