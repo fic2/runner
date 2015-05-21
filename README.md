@@ -47,13 +47,19 @@ You can request your account and the community upgrade at [https://account.lab.f
 
 Once you have received a confirmation of your upgrade to a community account, you can go to the [FIC2Lab runner wizard](https://runner.developer.mediafi.org) where you will be guided through the steps to create your own run environment.
 
+When you click on the 'Create' or 'Log in' buttons, you will be redirected to the FIWARE Lab login page, where you will be prompted your credentials.
+
 ![](https://github.com/fic2/runner/raw/master/images/image07.png)
+
+Once you're logged in, you will need to authorize the FIC2Lab runner to use your credentials (this only happens the first time).
 
 ![](https://github.com/fic2/runner/raw/master/images/image08.png)
 
+Once authorized, you will be redirected back to the FIC2Lab runner page where you can continue with the creation wizard.
+
 ![](https://github.com/fic2/runner/raw/master/images/image09.png)
 
-Once you click on the button to start creating your environment, the wizard will go through a number of steps that set up everything that you need on FIWARE Lab Cloud. If everything goes right, you should see a pop-up with the URL to your dedicated management console.
+When you click on the button to start creating your environment, the wizard will go through a number of steps that set up everything that you need on FIWARE Lab Cloud. If everything goes right, you should see a pop-up with the URL to your dedicated management console.
 
 ![](https://github.com/fic2/runner/raw/master/images/image01.png)
 
@@ -62,6 +68,32 @@ Some of the things that can go wrong are:
 * You don’t have a community account in the selected region.
 * Your quota of public IP addresses or VM instances is full.
 * There is an issue in the selected region. Try again in a few minutes or file a ticket.
+
+Run enablers using the FIC2Lab runner web-based tool (on top of Amazon Web Services)
+------------------------------------------------------------------------------------
+
+If you have an Amazon Web Services account, you can easily launch our preconfigured AMI image of the FIC2Lab runner by clicking on the following button:
+
+<a href="https://console.aws.amazon.com/cloudformation/home?region=eu-west-1#/stacks/new?stackName=FIC2Lab-runner&templateURL=https://s3-eu-west-1.amazonaws.com/fic2lab/panamax-cloudformation-ireland-nokey.json"><img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png"></a>
+
+This will create in the Ireland region (eu-west-1) the following resources:
+* a security group (named PanamaxSecurityGroup)
+* a t2.medium Linux instance (named PanamaxEc2Instance)
+
+![](https://github.com/fic2/runner/raw/master/images/aws-runner-1.png)
+
+![](https://github.com/fic2/runner/raw/master/images/aws-runner-2.png)
+
+Once the launch is complete, you will see the URL of your Panamax console in the outputs tab of the [AWS CloudFormation Console](https://eu-west-1.console.aws.amazon.com/cloudformation/home?region=eu-west-1). You may have to wait a couple of minutes for the software installation to finish before it is available.
+
+![](https://github.com/fic2/runner/raw/master/images/aws-runner-3.png)
+
+Clicking on the link will take you to your dedicated Panamax management console.
+
+![](https://github.com/fic2/runner/raw/master/images/aws-runner-4.png)
+
+Using the Panamax management console
+------------------------------------
 
 Once you go to your dedicated Panamax management console, you will be able to deploy and manage applications that will be publicly available online, listening on different ports of your public IP address.
 
@@ -92,28 +124,6 @@ For convenience, all the exposed ports of a Docker image are bound to the outsid
 
 ![](https://github.com/fic2/runner/raw/master/images/image02.png)
 
-Run enablers using the FIC2Lab runner web-based tool (on top of Amazon Web Services)
-------------------------------------------------------------------------------------
-
-If you have an Amazon Web Services account, you can easily launch our preconfigured AMI image of the FIC2Lab runner.
-
-<a href="https://console.aws.amazon.com/cloudformation/home?region=eu-west-1#/stacks/new?stackName=FIC2Lab-runner&templateURL=https://s3-eu-west-1.amazonaws.com/fic2lab/panamax-cloudformation-ireland-nokey.json"><img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png"></a>
-
-This will create in the Ireland region (eu-west-1) the following resources:
-* a security group (named PanamaxSecurityGroup)
-* a t2.medium Linux instance (named PanamaxEc2Instance)
-
-![](https://github.com/fic2/runner/raw/master/images/aws-runner-1.png)
-
-![](https://github.com/fic2/runner/raw/master/images/aws-runner-2.png)
-
-Once the launch is complete, you will see the URL of your Panamax console in the outputs tab of the [AWS CloudFormation Console](https://eu-west-1.console.aws.amazon.com/cloudformation/home?region=eu-west-1). You may have to wait a couple of minutes for the software installation to finish before it is available.
-
-![](https://github.com/fic2/runner/raw/master/images/aws-runner-3.png)
-
-Clicking on the link will take you to your dedicated Panamax management console.
-
-![](https://github.com/fic2/runner/raw/master/images/aws-runner-4.png)
 
 Using command-line tools
 ========================
