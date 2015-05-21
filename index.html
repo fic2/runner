@@ -32,10 +32,7 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h1>
-<a id="using-fic2lab-runner" class="anchor" href="#using-fic2lab-runner" aria-hidden="true"><span class="octicon octicon-link"></span></a>Using FIC2Lab runner</h1>
-
-<h2>
-<a id="tldr" class="anchor" href="#tldr" aria-hidden="true"><span class="octicon octicon-link"></span></a>TL;DR</h2>
+<a id="tldr" class="anchor" href="#tldr" aria-hidden="true"><span class="octicon octicon-link"></span></a>TL;DR</h1>
 
 <p>Host Docker-based applications in the Cloud using a nice web interface or command-line tools. Powered by <a href="https://www.docker.com/">Docker</a> and <a href="http://panamax.io/">Panamax</a>.</p>
 
@@ -48,20 +45,69 @@
 <a href="https://console.aws.amazon.com/cloudformation/home?region=eu-west-1#/stacks/new?stackName=FIC2Lab-Runner&amp;templateURL=https://s3-eu-west-1.amazonaws.com/fic2lab/panamax-cloudformation-ireland-nokey.json">Launch VM in Amazon EC2</a> (<a href="http://aws.amazon.com/">AWS account</a> required)</li>
 </ul>
 
-<h2>
-<a id="introduction" class="anchor" href="#introduction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Introduction</h2>
+<h1>
+<a id="table-of-contents" class="anchor" href="#table-of-contents" aria-hidden="true"><span class="octicon octicon-link"></span></a>Table of contents</h1>
+
+<ul>
+<li>
+<a href="#introduction">Introduction</a>
+
+<ul>
+<li><a href="#what-is-docker">What is Docker?</a></li>
+<li><a href="#how-can-i-use-the-docker-images-of-the-enablers">How can I use the Docker images of the enablers?</a></li>
+</ul>
+</li>
+<li>
+<a href="#using-fic2lab-runner">Using FIC2Lab runner</a>
+
+<ul>
+<li><a href="#run-enablers-using-the-fic2lab-runner-web-based-tool-in-fiware-lab-cloud">Run enablers using the FIC2Lab runner web-based tool in FIWARE Lab Cloud</a></li>
+<li><a href="#run-enablers-using-the-fic2lab-runner-web-based-tool-in-amazon-web-services">Run enablers using the FIC2Lab runner web-based tool in Amazon Web Services</a></li>
+<li><a href="#using-the-panamax-management-console">Using the Panamax management console</a></li>
+</ul>
+</li>
+<li>
+<a href="#using-command-line-tools">Using command-line tools</a>
+
+<ul>
+<li>
+<a href="#run-enablers-using-command-line-tools-in-your-own-machine">Run enablers using command-line tools in your own machine</a>
+
+<ul>
+<li><a href="#installing-docker">Installing Docker</a></li>
+<li><a href="#run-enablers-from-the-command-line">Run enablers from the command line</a></li>
+</ul>
+</li>
+<li>
+<a href="#run-enablers-using-command-line-tools-in-a-remote-machine-in-fiware-cloud">Run enablers using command-line tools in a remote machine in FIWARE Cloud</a>
+
+<ul>
+<li><a href="#preparing-the-cloud-environment">Preparing the cloud environment</a></li>
+<li><a href="#setting-up-the-tools">Setting up the tools</a></li>
+<li><a href="#creating-and-managing-the-remote-docker-host-on-fiware-lab">Creating and managing the remote Docker host on FIWARE Lab</a></li>
+</ul>
+</li>
+<li><a href="#run-enablers-using-command-line-tools-in-a-remote-machine-in-amazon-web-services">Run enablers using command-line tools in a remote machine in Amazon Web Services</a></li>
+<li><a href="#run-enablers-locally-or-remotely-using-a-graphical-user-interface-for-mac-os-x">Run enablers locally or remotely using a graphical user interface for Mac OS X</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
+</ul>
+
+<h1>
+<a id="introduction" class="anchor" href="#introduction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Introduction</h1>
 
 <p>Like many developers out there, FIcontent publishes open-source software as Docker images that are publicly available. You can run them in your own machine or in the cloud and reuse them to build your own applications. This tutorial helps you run those software enablers in different ways.</p>
 
-<h3>
-<a id="what-is-docker" class="anchor" href="#what-is-docker" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is Docker?</h3>
+<h2>
+<a id="what-is-docker" class="anchor" href="#what-is-docker" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is Docker?</h2>
 
 <p>Docker is an open-source project for shipping and running applications inside lightweight software containers that can run anywhere. Any application that runs on Linux can be packaged as a Docker container.</p>
 
-<p>Docker is very popular, and there are more than 70,000 Dockerized applications at the <a href="https://registry.hub.docker.com/">DockerHub Registry</a></p>
+<p>Docker is very popular, and there are more than 70,000 Dockerized applications in the <a href="https://registry.hub.docker.com/">DockerHub Registry</a>.</p>
 
-<h3>
-<a id="how-can-i-use-the-docker-images-of-the-enablers" class="anchor" href="#how-can-i-use-the-docker-images-of-the-enablers" aria-hidden="true"><span class="octicon octicon-link"></span></a>How can I use the Docker images of the enablers?</h3>
+<h2>
+<a id="how-can-i-use-the-docker-images-of-the-enablers" class="anchor" href="#how-can-i-use-the-docker-images-of-the-enablers" aria-hidden="true"><span class="octicon octicon-link"></span></a>How can I use the Docker images of the enablers?</h2>
 
 <p>You can deploy and manage our Docker images in different ways:</p>
 
@@ -77,8 +123,11 @@
 
 <p>The following subsections will show the different ways in which you can run those enablers.</p>
 
+<h1>
+<a id="using-fic2lab-runner" class="anchor" href="#using-fic2lab-runner" aria-hidden="true"><span class="octicon octicon-link"></span></a>Using FIC2Lab runner</h1>
+
 <h2>
-<a id="run-enablers-using-the-fic2lab-runner-web-based-tool-on-top-of-fiware-lab-cloud" class="anchor" href="#run-enablers-using-the-fic2lab-runner-web-based-tool-on-top-of-fiware-lab-cloud" aria-hidden="true"><span class="octicon octicon-link"></span></a>Run enablers using the FIC2Lab runner web-based tool (on top of FIWARE Lab Cloud)</h2>
+<a id="run-enablers-using-the-fic2lab-runner-web-based-tool-in-fiware-lab-cloud" class="anchor" href="#run-enablers-using-the-fic2lab-runner-web-based-tool-in-fiware-lab-cloud" aria-hidden="true"><span class="octicon octicon-link"></span></a>Run enablers using the FIC2Lab runner web-based tool in FIWARE Lab Cloud</h2>
 
 <p>FIC2Lab runner is a tool that automatically sets up for you a running VM instance with a Docker host and a web UI on top of the FIWARE Lab Cloud infrastructure. You don't need to know anything about the FIWARE Lab Cloud, it will configure all the infrastructure, network, security, etc.</p>
 
@@ -116,7 +165,7 @@
 </ul>
 
 <h2>
-<a id="run-enablers-using-the-fic2lab-runner-web-based-tool-on-top-of-amazon-web-services" class="anchor" href="#run-enablers-using-the-fic2lab-runner-web-based-tool-on-top-of-amazon-web-services" aria-hidden="true"><span class="octicon octicon-link"></span></a>Run enablers using the FIC2Lab runner web-based tool (on top of Amazon Web Services)</h2>
+<a id="run-enablers-using-the-fic2lab-runner-web-based-tool-in-amazon-web-services" class="anchor" href="#run-enablers-using-the-fic2lab-runner-web-based-tool-in-amazon-web-services" aria-hidden="true"><span class="octicon octicon-link"></span></a>Run enablers using the FIC2Lab runner web-based tool in Amazon Web Services</h2>
 
 <p>If you have an Amazon Web Services account, you can easily launch our preconfigured AMI image of the FIC2Lab runner by clicking on the following button:</p>
 
@@ -138,8 +187,6 @@
 <p><img src="https://github.com/fic2/runner/raw/master/images/aws-runner-3.png" alt=""></p>
 
 <p>Clicking on the link will take you to your dedicated Panamax management console.</p>
-
-<p><img src="https://github.com/fic2/runner/raw/master/images/aws-runner-4.png" alt=""></p>
 
 <h2>
 <a id="using-the-panamax-management-console" class="anchor" href="#using-the-panamax-management-console" aria-hidden="true"><span class="octicon octicon-link"></span></a>Using the Panamax management console</h2>
@@ -243,11 +290,11 @@ a12d72b85f09 fic2/ppnet:latest "/usr/local/bin/run. 44 seconds ago Up 43 seconds
 <p>You will notice the port redirection from host machine (0.0.0.0) port 8000 to container port 80. A random name will be generated if none is specified.</p>
 
 <h2>
-<a id="run-enablers-using-command-line-tools-in-a-remote-machine-in-the-cloud" class="anchor" href="#run-enablers-using-command-line-tools-in-a-remote-machine-in-the-cloud" aria-hidden="true"><span class="octicon octicon-link"></span></a>Run enablers using command-line tools in a remote machine in the cloud</h2>
+<a id="run-enablers-using-command-line-tools-in-a-remote-machine-in-fiware-cloud" class="anchor" href="#run-enablers-using-command-line-tools-in-a-remote-machine-in-fiware-cloud" aria-hidden="true"><span class="octicon octicon-link"></span></a>Run enablers using command-line tools in a remote machine in FIWARE Cloud</h2>
 
 <p>Docker Inc. develops a tool called docker-machine that you can use to automatically set up a docker host machine somewhere, and it can target cloud providers, including FIWARE Lab.</p>
 
-<p>You will need to allocate at 1 virtual machine instance with 1 public IP address. We will assume you have a Community account with enough free quotas in a FIWARE Lab region, for instance Lannion2.</p>
+<p>You will need to allocate 1 virtual machine instance with 1 public IP address. We will assume you have a Community account with enough free quotas in a FIWARE Lab region, for instance Lannion2.</p>
 
 <h3>
 <a id="preparing-the-cloud-environment" class="anchor" href="#preparing-the-cloud-environment" aria-hidden="true"><span class="octicon octicon-link"></span></a>Preparing the cloud environment</h3>
@@ -359,6 +406,27 @@ Stopping OpenStack instance... MachineId=2c07c0d8-b76b-4626-9f0e-20eff2ab0c18
 Deleting OpenStack instance...
 Successfully removed my-host
 </code></pre>
+
+<h2>
+<a id="run-enablers-using-command-line-tools-in-a-remote-machine-in-amazon-web-services" class="anchor" href="#run-enablers-using-command-line-tools-in-a-remote-machine-in-amazon-web-services" aria-hidden="true"><span class="octicon octicon-link"></span></a>Run enablers using command-line tools in a remote machine in Amazon Web Services</h2>
+
+<p>The procedure is very similar to the last section.</p>
+
+<p>You will need an Access Key ID, Secret Access Key and a VPC ID. To find the VPC ID, login to the AWS console and go to Services -&gt; VPC -&gt; Your VPCs. Select the one where you would like to launch the instance.</p>
+
+<pre><code>docker-machine create \
+--driver amazonec2 \
+--amazonec2-access-key your-aws-access-key \
+--amazonec2-secret-key your-aws-secret-key \
+--amazonec2-vpc-id your-aws-vpc-id \
+--amazonec2-region eu-west-1 \
+my-host
+
+</code></pre>
+
+<p>Use <code>docker-machine stop my-host</code> to stop the instance and <code>docker-machine rm my-host</code> to terminate the instance.</p>
+
+<p>You can find more information in the <a href="https://docs.docker.com/machine/#amazon-web-services">Docker Machine documentation for Amazon Web Services</a>.</p>
 
 <h2>
 <a id="run-enablers-locally-or-remotely-using-a-graphical-user-interface-for-mac-os-x" class="anchor" href="#run-enablers-locally-or-remotely-using-a-graphical-user-interface-for-mac-os-x" aria-hidden="true"><span class="octicon octicon-link"></span></a>Run enablers locally or remotely using a graphical user interface for Mac OS X</h2>
