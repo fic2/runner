@@ -4,16 +4,18 @@ Using FIC2Lab runner
 TL;DR
 -----
 
-Host Docker-based applications in the Cloud using a nice web interface or command-line tools. Powered by [Docker](https://www.docker.com/) and [Panamax](http://panamax.io/).
+Use a prepackaged VM to host software enablers using a nice web interface. Powered by [Docker](https://www.docker.com/) and [Panamax](http://panamax.io/).
 
 Get started:
 * [Launch VM in FIWARE Lab](https://195.220.224.10/#!/create) ([FIWARE community account required](https://account.lab.fiware.org/) required)
 * [Launch VM in Amazon EC2](https://console.aws.amazon.com/cloudformation/home?region=eu-west-1#/stacks/new?stackName=FIC2Lab-Runner&templateURL=https://s3-eu-west-1.amazonaws.com/fic2lab/panamax-cloudformation-ireland-nokey.json) ([AWS account](http://aws.amazon.com/) required)
+* Many other options
+
 
 Introduction
 ------------
 
-Like many developers out there, FIcontent publishes open-source software as Docker images that are publicly available. You can run them in your own machine or in the cloud and reuse them to build your own applications. This tutorial helps you run those software enablers in different ways.
+Many of the FI-CONTENT 2 Specific Enablers are server-side open-source software that you can easily reuse to build your own applications. For simplicity, these enablers have been packaged as Docker images that are publicly available. You can run them in your own machine or in the cloud.
 
 ### What is Docker?
 
@@ -21,21 +23,21 @@ Docker is an open-source project for shipping and running applications inside li
 
 Docker is very popular, and there are more than 70,000 Dockerized applications at the [DockerHub Registry](https://registry.hub.docker.com/)
 
-### How can I use the Docker images of the enablers?
+### How can I use the Docker images of the Specific Enablers?
 
 You can deploy and manage our Docker images in different ways:
-* using command-line tools in your own machine
+* using command-line tools in their own machine
 * using command-line tools in a remote machine in the Cloud (any provider, including FIWARE Lab Cloud)
 * using the FIC2Lab runner web-based tool to manage an instance on FIWARE Lab Cloud (best for beginners, limited for advanced users)
 
-The software enablers developed by FIcontent are available as public Docker images in the [FIC2Lab DockerHub repository](https://registry.hub.docker.com/repos/fic2/).
+Our Specific Enablers are available as public Docker images in the [FIC2Lab DockerHub repository](https://registry.hub.docker.com/repos/fic2/)
 
 ![](https://github.com/fic2/runner/raw/master/images/image05.png)
 
-The following subsections will show the different ways in which you can run those enablers.
+The following subsections will show the different ways in which you can run SEs.
 
-Run enablers using the FIC2Lab runner web-based tool (on top of FIWARE Lab Cloud)
----------------------------------------------------------------------------------
+Run SEs using the FIC2Lab runner web-based tool (on top of FIWARE Lab Cloud)
+----------------------------------------------------------------------------
 
 FIC2Lab runner is a tool that automatically sets up for you a running VM instance with a Docker host and a web UI on top of the FIWARE Lab Cloud infrastructure. You don't need to know anything about the FIWARE Lab Cloud, it will configure all the infrastructure, network, security, etc.
 
@@ -69,11 +71,11 @@ There’s 2 types of artifacts that can be deployed:
 * *Images*: individual Docker images. When deployed, they are called *services*.
 * *Application Templates*: linked sets of Docker images. When deployed, they are called *applications*, composed of one or more *services*.
 
-The user interface provides a built-in search capability that can search any public Docker image repository through Docker Hub, including the FIC2Lab repository. It will search as well public Application Templates from Panamax.io. You can also select from the list the featured templates and images.
+The user interface provides a built-in search capability that can search any public Docker image repository through Docker Hub, including the FI-CONTENT 2 repository. It will search as well public Application Templates from Panamax.io. You can also select from the list the featured templates and images.
 
 ![](https://github.com/fic2/runner/raw/master/images/image00.png)
 
-Let’s select the Social Network Enabler and click on “Run Template”. This will trigger under the hood the download and launch of an application with one image: “fic2/ppnet”. It will open the management dashboard for this application and show a spinning wheel that means that the deployment is taking place.
+Let’s select the Social Network SE and click on “Run Template”. This will trigger under the hood the download and launch of an application with one image: “fic2/ppnet”. It will open the management dashboard for this application and show a spinning wheel that means that the deployment is taking place.
 
 ![](https://github.com/fic2/runner/raw/master/images/image03.png)
 
@@ -92,34 +94,8 @@ For convenience, all the exposed ports of a Docker image are bound to the outsid
 
 ![](https://github.com/fic2/runner/raw/master/images/image02.png)
 
-Run enablers using the FIC2Lab runner web-based tool (on top of Amazon Web Services)
-------------------------------------------------------------------------------------
-
-If you have an Amazon Web Services account, you can easily launch our preconfigured AMI image of the FIC2Lab runner.
-
-<a href="https://console.aws.amazon.com/cloudformation/home?region=eu-west-1#/stacks/new?stackName=FIC2Lab-runner&templateURL=https://s3-eu-west-1.amazonaws.com/fic2lab/panamax-cloudformation-ireland-nokey.json"><img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png"></a>
-
-This will create in the Ireland region (eu-west-1) the following resources:
-* a security group (named PanamaxSecurityGroup)
-* a t2.medium Linux instance (named PanamaxEc2Instance)
-
-![](https://github.com/fic2/runner/raw/master/images/aws-runner-1.png)
-
-![](https://github.com/fic2/runner/raw/master/images/aws-runner-2.png)
-
-Once the launch is complete, you will see the URL of your Panamax console in the outputs tab of the [AWS CloudFormation Console](https://eu-west-1.console.aws.amazon.com/cloudformation/home?region=eu-west-1). You may have to wait a couple of minutes for the software installation to finish before it is available.
-
-![](https://github.com/fic2/runner/raw/master/images/aws-runner-3.png)
-
-Clicking on the link will take you to your dedicated Panamax management console.
-
-![](https://github.com/fic2/runner/raw/master/images/aws-runner-4.png)
-
-Using command-line tools
-========================
-
-Run enablers using command-line tools in your own machine
----------------------------------------------------------
+Run SEs using command-line tools in your own machine
+----------------------------------------------------
 
 Our software is packaged as standard Docker images. You can easily launch them from a terminal in your own machine.
 
@@ -135,13 +111,13 @@ Under Mac OS X, you can use [Kitematic](http://kitematic.com), a nice user inter
 
 You can also deploy it to different Cloud providers easily using [Docker Machine](https://docs.docker.com/machine/).
 
-### Run enablers from the command line
+### Running a SE from the command line
 
 We assume you have installed Docker on a Linux machine, or using boot2docker on a Windows or Mac.
 
-Find your enabler on the public [FIC2Lab DockerHub repository](https://registry.hub.docker.com/repos/fic2/).
+Find your SE on the public FI-CONTENT 2 repository [FIC2Lab DockerHub repository](https://registry.hub.docker.com/repos/fic2/).
 
-Then follow the instructions there. For instance, here are the instructions to run the Social Network Enabler:
+Then follow the instructions there. For instance, here are the instructions to run the Social Network SE:
 
 ![](https://github.com/fic2/runner/raw/master/images/image04.png)
 
@@ -177,8 +153,8 @@ a12d72b85f09 fic2/ppnet:latest "/usr/local/bin/run. 44 seconds ago Up 43 seconds
 
 You will notice the port redirection from host machine (0.0.0.0) port 8000 to container port 80. A random name will be generated if none is specified.
 
-Run enablers using command-line tools in a remote machine in the cloud
-----------------------------------------------------------------------
+Run SEs using command-line tools in a remote machine in the cloud
+-----------------------------------------------------------------
 
 Docker Inc. develops a tool called docker-machine that you can use to automatically set up a docker host machine somewhere, and it can target cloud providers, including FIWARE Lab.
 
@@ -294,12 +270,12 @@ Deleting OpenStack instance...
 Successfully removed my-host
 ```
 
-Run enablers locally or remotely using a graphical user interface for Mac OS X
-------------------------------------------------------------------------------
+Run SEs locally or remotely using a graphical user interface for Mac OS X
+-------------------------------------------------------------------------
 
 [Kitematic](http://www.kitematic.com)) is a OS X application to simplify the use of docker. By default, it uses docker-machine to create a Linux instance using VirtualBox in the local OS X machine and deploy Docker containers in it.
 
-The following figures depict how easy it is to search the DockerHub for FIcontent enablers, create an instance of an enabler and see the running web application.
+The following figures depict how easy it is to search the DockerHub for FI-CONTENT 2 enablers, create an instance of an enabler and see the running web application.
 
 ![](https://github.com/fic2/runner/raw/master/images/image11.png)
 
@@ -312,7 +288,6 @@ Kitematic has a button (4th at the top) to open a terminal in the target machine
 ![](https://github.com/fic2/runner/raw/master/images/image14.png)
 
 Since Kitematic uses docker-machine underneath to launch the target host machine, it can be tweaked to target remote host machines in the cloud.
-
 
 Conclusion
 ----------
