@@ -1,8 +1,5 @@
-Using FIC2Lab runner
-====================
-
 TL;DR
------
+=====
 
 Host Docker-based applications in the Cloud using a nice web interface or command-line tools. Powered by [Docker](https://www.docker.com/) and [Panamax](http://panamax.io/).
 
@@ -10,18 +7,43 @@ Get started:
 * [Launch VM in FIWARE Lab](https://195.220.224.10/#!/create) ([FIWARE community account required](https://account.lab.fiware.org/) required)
 * [Launch VM in Amazon EC2](https://console.aws.amazon.com/cloudformation/home?region=eu-west-1#/stacks/new?stackName=FIC2Lab-Runner&templateURL=https://s3-eu-west-1.amazonaws.com/fic2lab/panamax-cloudformation-ireland-nokey.json) ([AWS account](http://aws.amazon.com/) required)
 
+Table of contents
+=================
+
+  * [TL;DR](#tldr)
+  * [Table of contents](#table-of-contents)
+  * [Introduction](#introduction)
+    * [What is Docker?](#what-is-docker)
+    * [How can I use the Docker images of the enablers?](#how-can-i-use-the-docker-images-of-the-enablers)
+  * [Using FIC2Lab runner](#using-fic2lab-runner)
+    * [Run enablers using the FIC2Lab runner web-based tool (on top of FIWARE Lab Cloud)](#run-enablers-using-the-fic2lab-runner-web-based-tool-on-top-of-fiware-lab-cloud)
+    * [Run enablers using the FIC2Lab runner web-based tool (on top of Amazon Web Services)](#run-enablers-using-the-fic2lab-runner-web-based-tool-on-top-of-amazon-web-services)
+    * [Using the Panamax management console](#using-the-panamax-management-console)
+  * [Using command-line tools](#using-command-line-tools)
+    * [Run enablers using command-line tools in your own machine](#run-enablers-using-command-line-tools-in-your-own-machine)
+      * [Installing Docker](#installing-docker)
+      * [Run enablers from the command line](#run-enablers-from-the-command-line)
+    * [Run enablers using command-line tools in a remote machine in the cloud](#run-enablers-using-command-line-tools-in-a-remote-machine-in-the-cloud)
+      * [Preparing the cloud environment](#preparing-the-cloud-environment)
+      * [Setting up the tools](#setting-up-the-tools)
+      * [Creating and managing the remote Docker host on FIWARE Lab](#creating-and-managing-the-remote-docker-host-on-fiware-lab)
+    * [Run enablers locally or remotely using a graphical user interface for Mac OS X](#run-enablers-locally-or-remotely-using-a-graphical-user-interface-for-mac-os-x)
+    * [Conclusion](#conclusion)
+
 Introduction
-------------
+============
 
 Like many developers out there, FIcontent publishes open-source software as Docker images that are publicly available. You can run them in your own machine or in the cloud and reuse them to build your own applications. This tutorial helps you run those software enablers in different ways.
 
-### What is Docker?
+What is Docker?
+---------------
 
 Docker is an open-source project for shipping and running applications inside lightweight software containers that can run anywhere. Any application that runs on Linux can be packaged as a Docker container.
 
 Docker is very popular, and there are more than 70,000 Dockerized applications at the [DockerHub Registry](https://registry.hub.docker.com/)
 
-### How can I use the Docker images of the enablers?
+How can I use the Docker images of the enablers?
+------------------------------------------------
 
 You can deploy and manage our Docker images in different ways:
 * using command-line tools in your own machine
@@ -33,6 +55,9 @@ The software enablers developed by FIcontent are available as public Docker imag
 ![](https://github.com/fic2/runner/raw/master/images/image05.png)
 
 The following subsections will show the different ways in which you can run those enablers.
+
+Using FIC2Lab runner
+====================
 
 Run enablers using the FIC2Lab runner web-based tool (on top of FIWARE Lab Cloud)
 ---------------------------------------------------------------------------------
@@ -89,8 +114,6 @@ Once the launch is complete, you will see the URL of your Panamax console in the
 ![](https://github.com/fic2/runner/raw/master/images/aws-runner-3.png)
 
 Clicking on the link will take you to your dedicated Panamax management console.
-
-![](https://github.com/fic2/runner/raw/master/images/aws-runner-4.png)
 
 Using the Panamax management console
 ------------------------------------
